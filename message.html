@@ -1,0 +1,106 @@
+{%extends "Homepage3.html"%}
+{%block content%}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .message-table {
+        width: 80%;
+        margin: 0 auto;
+        border-collapse: collapse;
+    }
+
+    .message-table th, .message-table td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .message-table th {
+        background-color: #f2f2f2;
+    }
+
+    .message-table tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    form {
+        margin: 20px auto;
+        width: 50%;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color:#E0F4FF;
+        /* background: linear-gradient(135deg, #985ddc, #d1d1d1); */
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    table td, table th {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    table td:first-child {
+        width: 30%;
+    }
+
+    table td:last-child {
+        width: 70%;
+    }
+
+    select, input[type="text"], button {
+        width: calc(100% - 6px);
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+</style>
+<form method="post">
+    <center>
+        <h1>Message</h1>
+        <table>
+            <tr>
+                <td>Category</td>
+                <td>
+                    <select name="category" required>
+                        <option value="Shirt">Shirt</option>
+                        <option value="T-Shirt">T-Shirt</option>
+                        <option value="Jeans">Jeans</option>
+                        <option value="Jackets">Jackets</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Message</td>
+                <td><textarea name="message" rows="7" required></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button class="button btn-success form-control" type="submit" value="send Message">Send Message</button>
+                </td>
+            </tr>
+        </table>
+    </center>
+</form>
+{%endblock%}

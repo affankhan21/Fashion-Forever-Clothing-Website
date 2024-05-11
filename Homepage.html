@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Customized Bootstrap Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    /* Custom styles for the navbar */
+    .navbar {
+      background-color: #333; /* Dark background color */
+      border: none; /* Remove border */
+      border-radius: 0; /* Remove rounded corners */
+    }
+    
+    .navbar-brand {
+      color: #fff !important; /* White text color */
+    }
+    
+    .navbar-nav > li > a {
+      color: #fff !important; /* White text color for links */
+    }
+    
+    .navbar-nav > li > a:hover,
+    .navbar-nav > li > a:focus {
+      background-color: #555; /* Darker background color on hover/focus */
+    }
+
+    /* Custom styles for the jumbotron */
+    .jumbotron {
+      background-color: #f8f8f8; /* Light gray background color */
+    }
+
+    /* Custom styles for the footer */
+    footer {
+      background-color: #333; /* Dark background color */
+      color: #fff; /* White text color */
+      padding: 25px;
+    }
+
+    footer p {
+      margin-bottom: 0; /* Remove default bottom margin for paragraphs inside footer */
+    }
+
+    /* Custom styles for the form inside the footer */
+    footer form {
+      margin-top: 10px; /* Add some top margin */
+    }
+
+    footer input[type="email"] {
+      width: 250px; /* Adjust width of the email input */
+      margin-right: 10px; /* Add some right margin */
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Custom Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Deals</a></li>
+        <li><a href="#">Stores</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Customized Online Store</h1>      
+    <p>Mission, Vision & Values</p>
+  </div>
+</div>
+
+<!-- Rest of your content -->
+
+<footer class="container-fluid text-center">
+  <p>Customized Online Store &copy; 2024</p>  
+  <form class="form-inline">Get deals:
+    <input type="email" class="form-control" size="50" placeholder="Email Address">
+    <button type="button" class="btn btn-danger">Sign Up</button>
+  </form>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

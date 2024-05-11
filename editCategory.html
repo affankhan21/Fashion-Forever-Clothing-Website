@@ -1,0 +1,18 @@
+{%extends "Homepage3.html"%}
+{% block content%} 
+    <center>
+        <h1>Edit Category</h1>
+        <hr/>
+        <form method="post">
+        <table border="1">
+            <tr><td>Category Id</td>
+                <td><input type="text" name="cid" value="{{cat[0]}}" readonly/></td></tr>
+            <tr><td>Category Name</td>
+            <td><input type="text" name="cname" value="{{cat[1]}}"  required/></td></tr>
+            <tr><td><input type="submit" value="Save Category"/></td><td></td></tr>
+        </table>
+    </form>
+    </center>
+</body>
+</html>
+{%endblock%}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timeline Example</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 50px auto;
+    }
+
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        background-color: #007bff;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1px;
+    }
+
+    .event {
+        position: relative;
+        margin-bottom: 50px;
+    }
+
+    .event:last-child {
+        margin-bottom: 0;
+    }
+
+    .event .content {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    .event .date {
+        position: absolute;
+        width: 150px;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+</head>
+<body>
+
+<div class="timeline">
+    <div class="event">
+        <div class="content">
+            <h3>Event 1</h3>
+            <p>Description of Event 1</p>
+        </div>
+        <div class="date">January 2024</div>
+    </div>
+    <div class="event">
+        <div class="content">
+            <h3>Event 2</h3>
+            <p>Description of Event 2</p>
+        </div>
+        <div class="date">February 2024</div>
+    </div>
+    <div class="event">
+        <div class="content">
+            <h3>Event 3</h3>
+            <p>Description of Event 3</p>
+        </div>
+        <div class="date">March 2024</div>
+    </div>
+    <div class="event">
+        <div class="content">
+            <h3>Event 4</h3>
+            <p>Description of Event 4</p>
+        </div>
+        <div class="date">April 2024</div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    /* Custom styles for the navbar */
+    .navbar {
+      background-color:#637A9F; /* Dark background color */
+      border: none; /* Remove border */
+      border-radius: 0; /* Remove rounded corners */
+    }
+    
+    .navbar-brand {
+      color: #fff !important; /* White text color */
+    }
+    
+    .navbar-nav > li > a {
+      color: #fff !important; /* White text color for links */
+    }
+    
+    .navbar-nav > li > a:hover,
+    .navbar-nav > li > a:focus {
+      background-color:#637A9F; /* Darker background color on hover/focus */
+    }
+
+    /* Custom styles for the jumbotron */
+    .jumbotron  {
+      background-color: #f8f8f8; /* Light gray background color */
+      background-image:url(" {{ url_for('static', filename='/Wallpapers/3638.jpg')}}");
+      background-color:#B3C8CF;
+      padding: 20px 0; /* Adjust padding */
+      margin-bottom: 0;
+      width:100%;
+      height:50%;
+    }
+    /* Custom styles for the footer */
+    footer {
+      background-color: #333; /* Dark background color */
+      color: #fff; /* White text color */
+      padding: 25px;
+    }
+
+    footer p {
+      margin-bottom: 0; /* Remove default bottom margin for paragraphs inside footer */
+    }
+
+    /* Custom styles for the form inside the footer */
+    footer form {
+      margin-top: 10px; /* Add some top margin */
+    }
+
+    footer input[type="email"] {
+      width: 250px; /* Adjust width of the email input */
+      margin-right: 10px; /* Add some right margin */
+    }
+    .slider-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .slides {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    
+    .slide {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .slide img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        outline: none;
+    }
+    
+    .prev {
+        left: 0;
+    }
+    
+    .next {
+        right: 0;
+    }
+    #headers
+    {
+      /* background-image: url("/static/Images/banner.jpg"); */
+      background-color: #FFF3C7;
+      width:100%;
+      height:100%;
+    }
+    .container {
+    max-width: 800px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+  body{
+    background-color: #BED7DC;
+  }
+  </style>
+  <title>E-Commerce Website</title>
+</head>
+<body>
+
+
+  <!-- <div id="headers">
+  
+  <img src="static/Images/bird_2.jpg" width="5%" height="5%">
+<h1 class="text-center">Fashion Forever</h1>
+<p class="text-center">Where fashion meets elegance</p></div> -->
+<div class="jumbotron ">
+  <div class="container text-center">
+    <h1>Fashion Forever </h1>  
+     
+    <p>Where fashion meets Elegance</p>
+  </div>
+</div>
+<div class="slider-container">
+    <div class="slides">
+        <div class="slide"><img src="/static/Images/image9.jpg" alt="Image 1"> </div>
+        <div class="slide"><img src="/static/Images/image15.png" alt="Image 2"></div>
+        <div class="slide"><img src="/static/Images/image55.jpg" alt="Image 3"></div>
+        <div class="slide"><img src="/static/Images/image13.jpg" alt="Image 3"></div>
+    </div>
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+</div>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    
+    function showSlides() {
+        slides.forEach((slide) => {
+            slide.style.display = 'none';
+        });
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = 'block';
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    showSlides();
+    
+    function nextSlide() {
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+        showSlides();
+    }
+    
+    function prevSlide() {
+        slideIndex--;
+        if (slideIndex < 1) {
+            slideIndex = slides.length;
+        }
+        showSlides();
+    }
+</script>
+
+
+
+
+
+
+
+<!-- Rest of your content -->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img src="{{ url_for('static', filename='/Wallpapers/36389.png')}}" height="35px" width="40px"/></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        {%if "uname" in session%}
+        <li ><a href="/">Welcome {{session["uname"]}}</a></li>
+        {%else%}
+        <li><a href="/">Welcome </a></li>
+        {%endif%}
+        <li ><a href="/">Home </a></li>
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Category
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            {% for cat in cats%}
+            <li><a href="/showPt/{{cat[0]}}">{{cat[1]}}</a></li>
+            {%endfor%}
+          </ul>
+        </li>
+        
+        <li><a href="/Aboutus">About Us</a></li>
+        <li><a href="/Contact">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {%if "uname" in session%}
+        <li><a href="/Logout"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
+        <li><a href="/Cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        <li><a href="/viewwishlist"><span class="glyphicon glyphicon-heart"></span> Wishlist</a></li>
+        <li><a href="/message"><span class="glyphicon glyphicon-envelope"></span> Message</a></li>
+       {%else%}
+        <li><a href="/Login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+        <li><a href="/Register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+        {%endif%}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container"> 
+  {% block content%}   
+  <div class="row">
+    {% for cake in cakes%}
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">{{cake[1]}}</div>
+        <div class="panel-body"><img src="{{ url_for('static', filename=cake[5])}}" class="img-responsive" style="width:200px; height:200px"   alt="Image"></div>
+        <div class="panel-footer">
+          Price: {{cake[2]}}<br>
+          Size: {{cake[3]}} <br>
+          Description: {{cake[4]}}<br>
+          <div class="rating" id="rating{{cake[0]}}">
+            <input type="radio" id="star5{{cake[0]}}" name="rating{{cake[0]}}" value="5" /><label for="star5{{cake[0]}}" title="5 stars">&#9733;</label>
+            <input type="radio" id="star4{{cake[0]}}" name="rating{{cake[0]}}" value="4" /><label for="star4{{cake[0]}}" title="4 stars">&#9733;</label>
+            <input type="radio" id="star3{{cake[0]}}" name="rating{{cake[0]}}" value="3" /><label for="star3{{cake[0]}}" title="3 stars">&#9733;</label>
+            <input type="radio" id="star2{{cake[0]}}" name="rating{{cake[0]}}" value="2" /><label for="star2{{cake[0]}}" title="2 stars">&#9733;</label>
+            <input type="radio" id="star1{{cake[0]}}" name="rating{{cake[0]}}" value="1" /><label for="star1{{cake[0]}}" title="1 star">&#9733;</label>
+          </div>
+          <button type="button"class="btn btn-success"> <a href="ViewDetails/{{cake[0]}}">View Details</a></button>
+          <button type="button"class="btn btn-warning"> <a href="wishlist/{{cake[0]}}"> Wishlist</a></button> 
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+  {% endblock%}
+</div><br>
+
+<footer class="container-fluid text-center">
+  <p>Customized Online Store &copy; 2024</p>  
+  <form class="form-inline">Get deals:
+    <input type="email" class="form-control" size="50" placeholder="Email Address"/>
+    <a href="/adminLogin"><span class="glyphicon glyphicon-king"></span> Admin Login</a>
+    <a href="/adminHome"><span class="glyphicon glyphicon-home"></span> Admin Home</a>
+  </form>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script>
+  // Rating functionality
+  $(document).ready(function(){
+    $('.rating input').on('change', function() {
+      var rating = $(this).val();
+      var productId = $(this).attr('name').replace('rating', '');
+      $.ajax({
+        type: 'POST',
+        url: '/submit-rating', // Change this to the URL where you will submit the rating
+        data: {
+          rating: rating,
+          productId: productId
+        },
+        success: function(response) {
+          // Handle success, if needed
+        },
+        error: function(xhr, status, error) {
+          // Handle error, if needed
+          console.error(error);
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

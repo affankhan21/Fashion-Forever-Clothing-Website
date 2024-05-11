@@ -1,0 +1,26 @@
+{% extends "Homepage3.html" %}
+{% block content %}
+<body>
+    <center>
+        <h1>Show All Product</h1>
+        <a href="/addProduct">Add New Product</a>
+        <hr/>
+        <table border="1">
+        <th>ProductID</th><th>Productame</th><th>price</th><th>Size</th><th>description</th><th>image</th><th>type</th><th>Edit</th><th>delete</th></tr>
+        {%for cake in cakes%}
+                    <tr> 
+                        <td>{{cake[0]}}</td>
+                        <td>{{cake[1]}}</td>
+                        <td>{{cake[2]}}</td>
+                        <td>{{cake[3]}}</td>
+                        <td>{{cake[4]}}</td>
+
+                        <td><img src="{{ url_for('static', filename=cake[5])}}" height="100" width="100"/></td>
+                        <td>{{cake[6]}}</td>
+        <td><button class="button btn-warning" ><a href="/editProduct/{{cake[0]}}"><span class="glyphicon glyphicon-pencil"></a></span></button></td>
+                    <td><button class="button btn-danger"><a href="/deleteProduct/{{cake[0]}}"> <span class="glyphicon glyphicon-remove"></a></span></button></td></tr>
+                    {%endfor%}
+                </table>
+            </form>
+            </center
+{%endblock%}

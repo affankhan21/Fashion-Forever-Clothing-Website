@@ -1,0 +1,37 @@
+{%extends "Homepage3.html"%}
+{% block content%} 
+<style>
+    table{
+        background-color: white;
+    }
+    h4{
+        color:red;
+    }
+</style>
+<form method="post">
+
+            <center>
+      
+                <hr/>
+    <h1>User Registration Page</h1>
+                <table border="1">
+                    <tr>
+                        <td>Login Id</td>
+                        <td><input type="text" name="uname" required></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" name="pwd" required></td>
+                    </tr>
+      <tr>
+                            <td>Email</td>
+                            <td><input type="email" name="email" required></td>
+                        </tr>
+                    <tr>
+                        <td><button class="button btn-danger form-control" type="submit" value="Login">Login</button></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </center>
+        </form>
+   {% endblock %}  

@@ -1,0 +1,160 @@
+{%extends "Homepage3.html"%}
+{%block content%}
+<title>About Us</title>
+<style>
+  .left-align {
+    text-align: left;
+  }
+  
+  .right-align {
+    text-align: right;
+    background-color:white;
+  }
+  
+  .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 50px auto;
+    }
+
+    .timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #007bff;
+    top: 0;
+    bottom: 0;
+    left: 0; /* Move the line to the extreme left */
+    margin-left: 0; /* Reset margin */
+}
+
+.mission-vision-section {
+    border: 5px solid #FF9800;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+    .event {
+        position: relative;
+        margin-bottom: 50px;
+    }
+
+    .event:last-child {
+        margin-bottom: 0;
+    }
+
+    .event .content {
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    .event .date {
+        position: absolute;
+        width: 150px;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+</head>
+<body>
+
+<h1>About Us</h1>
+
+<div class="left-align mission-vision-section">
+  <h2>Vision</h2>
+  <img src="static/Images/vi.png" alt="Company Vision" style="width: 200px;">
+  <p><h3>
+    At Fashion Forever, we envision a world where fashion knows no boundaries.
+    Our vision is to inspire confidence and empower individuals to express themselves through their unique style, making fashion accessible to all.
+</h3></p></div>
+<div class ="left-align mission-vision-section">
+  <h2>Mission</h2>
+  <img src="static/Images/mi.png" alt="Company Mission" style="width: 200px;">
+  <p><h3>
+    Our mission at Fashion Forever  is to provide high-quality, trendy, and affordable clothing that allows our customers to embrace their individuality and feel their best every day. 
+    We strive to offer a seamless online shopping experience, exceptional customer service, and sustainable practices to minimize our environmental impact.
+</h3> </p>
+</div>
+<h2>History</h2>
+<div class="timeline">
+    <div class="event">
+        <div class="content">
+
+            <h3>Established</h3>
+            <p>Fashion Forever was founded in 2010 by John Doe,
+                 a passionate entrepreneur with a vision to redefine men's fashion. 
+                 What began as a small boutique in the heart of New York City has evolved into a globally recognized brand, known for its quality, style, and innovation.</p>
+        </div>
+        <div class="date">Before 2010</div>
+        
+    </div>
+    <div class="event">
+        <div class="content">
+            <h3>The Beginning</h3>
+            <p> Fashion Forever was born out of a desire to provide men with stylish and affordable clothing options. John Doe opened the first store in Manhattan, offering a curated selection of men's clothing that quickly gained attention for its quality and unique designs.</p>
+        </div>
+        <div class="date">2010</div>
+    </div>
+    <div class="event">
+        <div class="content">
+            <h3> Expansion and Growth</h3>
+            <p>With growing demand and a loyal customer base,Fashion Forever expanded its presence, opening several new stores across the United States. The brand's commitment to quality and customer satisfaction fueled its rapid growth, earning it a reputation as a go-to destination for fashionable men's apparel.</p>
+        </div>
+        <div class="date">2012</div>
+    </div>
+    <div class="event">
+        <div class="content">
+            <h3> Launch of Online Store</h3>
+            <p>In response to the increasing demand for online shopping, Fashion Forver launched its e-commerce platform. This move allowed the brand to reach a wider audience and provide customers with a seamless shopping experience from the comfort of their homes. The online store quickly became a success, further solidifying the brand's position in the market</p>
+        </div>
+        <div class="date"> 2015</div>
+    </div>
+    <div class="event">
+        <div class="content">
+            <h3>Sustainable Initiatives</h3>
+<p>Recognizing the importance of sustainability,Fashion Forver  launched several initiatives aimed at reducing its environmental impact. From using eco-friendly materials to implementing sustainable production practices, the brand is committed to making a positive difference in the fashion industry.</p>
+        </div>
+        <div class="date"> 2020</div>
+        
+    </div>
+    <div class="event">
+        <div class="content">
+            <h3>Innovation and Modernization</h3>
+<p>Innovation has always been at the heart of Fashion Forever. In 2022, the brand introduced a new line of smart clothing, integrating technology into its designs to meet the evolving needs of its customers. This move further solidified Fashion Forver as a pioneer in the fashion industry.</p>
+        </div>
+        <div class="date"> 2022</div>
+        </div>
+        <div class="event">
+            <div class="content">
+                <h3>Innovation and Modernization</h3>
+    <p>Innovation has always been at the heart of Fashion Forever. In 2022, the brand introduced a new line of smart clothing, integrating technology into its designs to meet the evolving needs of its customers. This move further solidified Fashion Forver as a pioneer in the fashion industry.</p>
+            </div>
+            <div class="date"> 2022</div>
+            </div>
+
+            <div class="event">
+                <div class="content">
+                    <h3>Present - The Legacy Continues</h3>
+        <p>Today,Fashion Forever continues to uphold its legacy of quality, style, and innovation. With a strong presence both online and offline, the brand remains dedicated to providing men with fashionable and affordable clothing options that empower them to express their unique style.</p>
+                </div> <div class="date"> Present</div>
+                </div>
+
+                <div class="event">
+                    <div class="content">
+                        <h3>Future - Redefining Men's Fashion</h3>
+            <p>As Fashion Forever looks to the future, it remains committed to redefining men's fashion. With a focus on sustainability, innovation, and customer satisfaction, the brand will continue to push boundaries, inspire confidence, and empower individuals to embrace their individuality through fashion.</p>
+                 </div>   <div class="date"> Future</div>
+                    </div>       
+   
+</div>
+
+</body>
+
+{%endblock%}
